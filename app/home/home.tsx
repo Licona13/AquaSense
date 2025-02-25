@@ -1,8 +1,9 @@
-import HomeView from "@/components/home/homeView";
+import { TabNavigator } from "@/components/screenTabs/TabNavigator";
+
 
 
 export default function Home(){
     return(
-        <HomeView/>
+        <TabNavigator/>
     )
 }
