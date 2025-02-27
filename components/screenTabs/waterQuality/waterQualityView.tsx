@@ -57,6 +57,7 @@ export const HomeScreen = () => {
       />
 
       <Button title="Agregar Datos" onPress={handleSubmit} />
+      <Text>ENVIADO!</Text>
     </View>
   );
 };
