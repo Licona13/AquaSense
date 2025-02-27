@@ -2,6 +2,6 @@ import { Text } from "react-native";
 
 export default function TemperatureView(){
     return(
-        <Text>TEMPERATURA</Text>
+        <Text>TEMPERATURA2</Text>
     )
 }
