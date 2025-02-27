@@ -3,12 +3,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"; // Cre
 import { Ionicons } from "@expo/vector-icons";
 
 //PANTALLAS
-
 import DispenserView from "./dispenser/dispenserView";
 import ParticlesView from "./particles/particlesView";
 import TemperatureView from "./temperature/temperatureView";
 import { HomeScreen } from "./waterQuality/waterQualityView";
-
+import Home from "./home";
 
 
 const Tab = createBottomTabNavigator();
@@ -32,6 +31,7 @@ export const TabNavigator = () => {
                       tabBarInactiveTintColor: "gray",
                   }}
     >
+      <Tab.Screen name="Principal" component={Home} />
       <Tab.Screen name="Calidad del agua" component={HomeScreen} />
       <Tab.Screen name="Dispensador" component={DispenserView} />
       <Tab.Screen name="Particulas" component={ParticlesView} />
