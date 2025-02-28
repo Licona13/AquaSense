@@ -4,7 +4,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"; // Cre
 //PANTALLAS
 import ParticlesView from "./screens/particlesView";
 import TemperatureView from "./screens/temperatureView";
-import { HomeScreen } from "./screens/waterQualityView";
+import WaterQualityView from "./screens/waterQuality/waterQualityView";
+
 
 
 const Tab = createBottomTabNavigator();
@@ -29,7 +30,7 @@ export const TabNavigator = () => {
                       tabBarInactiveTintColor: "gray",
                   }}
     >
-      <Tab.Screen name="Calidad del agua" component={HomeScreen} />
+      <Tab.Screen name="Calidad del agua" component={WaterQualityView} />
       <Tab.Screen name="Particulas" component={ParticlesView} />
       <Tab.Screen name="Temperatura" component={TemperatureView} />
     </Tab.Navigator>
