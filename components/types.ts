@@ -5,6 +5,8 @@ export type RootDrawerParamList = {
   Login: undefined;
   About: undefined;
   Perfil: undefined;
+  Temperatura:undefined;
+  Principal: undefined;
 };
 
 export type NavigationProps = DrawerNavigationProp<RootDrawerParamList>;

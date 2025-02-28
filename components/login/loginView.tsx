@@ -8,7 +8,8 @@ import ModalResetPassword from "./modalResetpassword";
 import Icon from "react-native-vector-icons/Feather";
 
 const LoginView = () => {
-  const navigation = useNavigation<NavigationProps>();
+  // const navigation = useNavigation<NavigationProps>();
+  const navigation = useNavigation<any>();
   const [password, setPassword] = useState("");
   const [email] = useState("aquasensekeicode@gmail.com");
   const [loading, setLoading] = useState(false);
@@ -42,7 +43,7 @@ const LoginView = () => {
   };
 
   return (
-    <ImageBackground style={styles.fondo} source={require("../../assets/images/fondo.jpg")}> 
+    <ImageBackground style={styles.fondo} source={require("../../assets/images/descarga (1).jpg")}> 
       <View style={styles.fondo}> 
         <StatusBar barStyle="light-content" backgroundColor="#1a1a2e" hidden={false} />
 
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     alignItems: "center",
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
   },
   scrollContainer: {
     justifyContent: 'center',

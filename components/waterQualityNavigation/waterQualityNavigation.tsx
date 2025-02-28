@@ -1,18 +1,16 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"; // Crea una pantalla de ajustes
-import { Ionicons } from "@expo/vector-icons";
 
 //PANTALLAS
-import DispenserView from "./dispenser/dispenserView";
-import ParticlesView from "./particles/particlesView";
-import TemperatureView from "./temperature/temperatureView";
-import { HomeScreen } from "./waterQuality/waterQualityView";
-import Home from "./home";
+import ParticlesView from "./screens/particlesView";
+import TemperatureView from "./screens/temperatureView";
+import { HomeScreen } from "./screens/waterQualityView";
 
 
 const Tab = createBottomTabNavigator();
 
 export const TabNavigator = () => {
+   const Tab = createBottomTabNavigator <any>(); 
   return (
     <Tab.Navigator
     screenOptions={{
@@ -31,9 +29,7 @@ export const TabNavigator = () => {
                       tabBarInactiveTintColor: "gray",
                   }}
     >
-      <Tab.Screen name="Principal" component={Home} />
       <Tab.Screen name="Calidad del agua" component={HomeScreen} />
-      <Tab.Screen name="Dispensador" component={DispenserView} />
       <Tab.Screen name="Particulas" component={ParticlesView} />
       <Tab.Screen name="Temperatura" component={TemperatureView} />
     </Tab.Navigator>

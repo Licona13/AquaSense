@@ -1,10 +1,8 @@
-import HomeView from "@/components/home/homeView";
 import { TabNavigator } from "@/components/waterQualityNavigation/waterQualityNavigation";
 
 
-
-export default function Home(){
+export default function waterQuality(){
     return(
-        <HomeView/>
+        <TabNavigator/>
     )
 }

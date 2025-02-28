@@ -2,24 +2,22 @@ import React, { useState, useEffect } from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Text } from "react-native";
 import { onAuthStateChanged } from "firebase/auth"; // Para escuchar cambios de sesión
-import { auth } from "@/lib/firebaseConfig";// Asegúrate de importar bien tu configuración de Firebase
-import { RootDrawerParamList } from "@/components/types"; // Asegúrate de importar el tipo correcto
+import { auth } from "@/lib/firebaseConfig"; // Asegúrate de importar bien tu configuración de Firebase
 
-//PANTLLAS
+// PANTALLAS
 import Login from "./login/login";
 import About from "./about/about";
-
 import Profile from "./profile/profile";
 import Home from "./home/home";
+import waterQuality from "./water_quality/water_quality";
 
 const Drawer = createDrawerNavigator();
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const Drawer = createDrawerNavigator<RootDrawerParamList>();  // Usando el tipo de la lista de pantallas
+  const Drawer = createDrawerNavigator<any>();
 
   useEffect(() => {
-    // Cambios en la autenticación
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setIsAuthenticated(!!user); // Si hay usuario, está autenticado
     });
@@ -47,6 +45,15 @@ export default function App() {
             options={{ drawerIcon: () => <Text style={{ fontSize: 20 }}>📱</Text> }}
           />
           <Drawer.Screen
+            name="Home"
+            component={Home}
+            options={{
+              drawerIcon: () => <Text style={{ fontSize: 20 }}>🏚️</Text>,
+              drawerItemStyle: { display: "none" } // Oculta el item del Drawer
+            }}
+          />
+
+          <Drawer.Screen
             name="About"
             component={About}
             options={{ drawerIcon: () => <Text style={{ fontSize: 20 }}>🔎</Text> }}
@@ -59,7 +66,13 @@ export default function App() {
             component={Home}
             options={{ drawerIcon: () => <Text style={{ fontSize: 20 }}>🏚️</Text> }}
           />
-            <Drawer.Screen
+
+          <Drawer.Screen
+            name="Calidad del agua"
+            component={waterQuality}
+            options={{ drawerIcon: () => <Text style={{ fontSize: 20 }}>🤖</Text> }}
+          />
+          <Drawer.Screen
             name="Perfil"
             component={Profile}
             options={{ drawerIcon: () => <Text style={{ fontSize: 20 }}>⚙️</Text> }}
@@ -69,7 +82,6 @@ export default function App() {
             component={About}
             options={{ drawerIcon: () => <Text style={{ fontSize: 20 }}>🔎</Text> }}
           />
-        
         </>
       )}
     </Drawer.Navigator>
