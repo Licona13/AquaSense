@@ -32,7 +32,7 @@ const HomeView = () => {
        <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate("Calidad del agua")}>
           <Text style={styles.btnText}>Informacion del agua</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity style={styles.btn}  onPress={() => navigation.navigate("Dispensador de comida")}>
           <Text style={styles.btnText}>Administrar comida</Text>
         </TouchableOpacity>
        </View>

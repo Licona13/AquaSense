@@ -9,7 +9,8 @@ import Login from "./login/login";
 import About from "./about/about";
 import Profile from "./profile/profile";
 import Home from "./home/home";
-import waterQuality from "./water_quality/water_quality";
+import waterQuality from "./waterQuality/water_quality";
+import FoodDispenser from "./foodDispenser/foodDispenser";
 
 const Drawer = createDrawerNavigator();
 
@@ -31,7 +32,7 @@ export default function App() {
         headerStyle: { backgroundColor: "#1a1a2e" },
         headerTintColor: "white",
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
-        drawerStyle: { backgroundColor: "#1a1a2e", width: 280 },
+        drawerStyle: { backgroundColor: "#1a1a2e", width: 350 },
         drawerActiveTintColor: "#fff",
         drawerInactiveTintColor: "#bbb",
         drawerLabelStyle: { fontSize: 20, marginTop: 10, fontWeight: "bold" },
@@ -72,6 +73,11 @@ export default function App() {
             component={waterQuality}
             options={{ drawerIcon: () => <Text style={{ fontSize: 20 }}>🤖</Text> }}
           />
+             <Drawer.Screen
+            name="Dispensador de comida"
+            component={FoodDispenser}
+            options={{ drawerIcon: () => <Text style={{ fontSize: 20 }}>🐟</Text> }}
+          />
           <Drawer.Screen
             name="Perfil"
             component={Profile}
@@ -82,6 +88,7 @@ export default function App() {
             component={About}
             options={{ drawerIcon: () => <Text style={{ fontSize: 20 }}>🔎</Text> }}
           />
+       
         </>
       )}
     </Drawer.Navigator>

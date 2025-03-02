@@ -24,7 +24,7 @@ export default function WaterQualityView() {
   }, []);
 
   if (loading) {
-    return <ActivityIndicator size="large" color="#0000ff" />; // Muestra el cargador mientras se obtienen los datos
+    return <ActivityIndicator size="large" color="#0000ff" />; // Muestra que carga mientras se obtienen los datos
   }
 
   if (waterQualityData.length === 0) {
