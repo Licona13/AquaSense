@@ -7,7 +7,7 @@ export default function AboutView() {
                 <Text style={styles.title}>Acerca de</Text>
                 <View style={styles.container}>
                     <Text style={styles.text}>
-                        Esta App fue creada con ayuda de tecnologías como React Native y Supabase para crear esta experiencia.
+                        JUAN EXTRAÑA ASU EX
                     </Text>
                 </View>
             </View>

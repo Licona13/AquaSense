@@ -1,6 +1,6 @@
 // screens/Home.tsx
 import React, { useEffect, useState } from 'react';
-import { View, ActivityIndicator, Text, StatusBar, StyleSheet } from 'react-native';
+import { View, ActivityIndicator, Text, StatusBar, StyleSheet, ScrollView } from 'react-native';
 import { getWaterQualityData} from '@/lib/waterQuality/waterQualityService'; // Importa la función
 import WaterQualityItem from './WaterQualityItem'; // Importa el componente WaterQualityItem
 
@@ -34,7 +34,8 @@ export default function WaterQualityView() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor='#1a1a2e' hidden={false} />
-      <Text style={styles.title}>CALIDAD DE AGUA</Text>
+      {/* <Text style={styles.title}>CALIDAD DE AGUA</Text> */}
+      <ScrollView>
       {waterQualityData.map((data, index) => (
         <WaterQualityItem
           key={index}
@@ -45,6 +46,7 @@ export default function WaterQualityView() {
           timestamp={data.timestamp}
         />
       ))}
+      </ScrollView>
     </View>
   );
 }

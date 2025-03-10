@@ -1,7 +1,8 @@
-import FoodDispenserView from "@/components/foodDispenser/foodDispenserView";
+import { TabNavigatorFoodDispenser } from "@/components/foodDispenser/foodDispenserNavigation";
+
 
 export default function FoodDispenser(){
     return(
-        <FoodDispenserView/>
+        <TabNavigatorFoodDispenser/>
     )
 }

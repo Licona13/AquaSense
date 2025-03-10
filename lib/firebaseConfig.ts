@@ -18,4 +18,5 @@ const app = initializeApp(firebaseConfig); //conectar Firebase con la app.
 const auth = getAuth(app); // Se inicializa la autenticación
 const db = getFirestore(app); // Se inicializa Firestore (base de datos)
 
-export { auth, db };  //Usar en otros archivos del pro yecto,
+export { auth, db, app }; //Usar en otros archivos del pro yecto,
+  //Usar en otros archivos del pro yecto,
