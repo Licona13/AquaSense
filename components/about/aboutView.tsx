@@ -7,7 +7,7 @@ export default function AboutView() {
                 <Text style={styles.title}>Acerca de</Text>
                 <View style={styles.container}>
                     <Text style={styles.text}>
-                        JUAN EXTRAÑA ASU EX
+                        App realizada por react native 📱
                     </Text>
                 </View>
             </View>

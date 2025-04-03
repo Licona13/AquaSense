@@ -46,7 +46,7 @@ const FoodDispenserForm = () => {
     >
       <Text style={styles.title}>Agregar Datos al Dispensador de Comida</Text>
 
-      <Text style={styles.label}>Selecciona el nivel de comida:</Text>
+      <Text style={styles.label}>Selecciona la porcion de comida:</Text>
       <View style={styles.pickerContainer}>
         <Picker
           selectedValue={foodLevel}

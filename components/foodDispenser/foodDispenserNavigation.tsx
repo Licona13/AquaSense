@@ -4,7 +4,6 @@ import { Ionicons } from "@expo/vector-icons"; // Importa los íconos
 
 // PANTALLAS
 import FoodDispenserView from "./screens/foodDispenserForm/foodDispenserView";
-import Pantalla from "./screens/foodDispenserList/FoodDispenserList";
 import FoodDispenserListView from "./screens/foodDispenserList/FoodDispenserList";
 
 // Crear el Tab Navigator
@@ -22,13 +21,13 @@ export const TabNavigatorFoodDispenser = () => {
       screenOptions={({ route }) => ({
         headerShown: false, // Oculta el header
         tabBarStyle: {
-          backgroundColor: "#1a1a2e", // Color de fondo de la barra de pestañas
+          backgroundColor: "#1a1a2e", 
         },
-        tabBarActiveTintColor: "white", // Color cuando está activo
+        tabBarActiveTintColor: "white", 
         tabBarInactiveTintColor: "gray", // Color cuando está inactivo
         tabBarIcon: ({ color, size }) => (
           <Ionicons
-            name={iconNames[route.name] || "help-circle"} // Asignación de iconos
+            name={iconNames[route.name] || "help-circle"} 
             size={size}
             color={color}
           />

@@ -1,6 +1,6 @@
 // src/services/foodDispenserService.ts
-import { db } from '../firebaseConfig';
-import { collection, query, onSnapshot, orderBy, doc, setDoc, deleteDoc } from 'firebase/firestore';
+import { db } from '../firebaseConfig'; // Asegúrate de que este archivo esté configurado correctamente
+import { collection, query, onSnapshot, orderBy, doc, setDoc, deleteDoc, updateDoc } from 'firebase/firestore';
 import { Timestamp } from 'firebase/firestore'; // Importa Timestamp
 
 interface FoodDispenserData {
@@ -11,7 +11,7 @@ interface FoodDispenserData {
   timestamp: Timestamp;
 }
 
-// Agregar un nuevo dispensador de comida a Firestore
+// Agregar 
 export const addFoodDispenserData = async (comment: string, foodLevel: string, interval: string, timestamp: Timestamp) => {
   try {
     const newDocRef = doc(collection(db, 'foodDispenser'));
@@ -29,11 +29,11 @@ export const addFoodDispenserData = async (comment: string, foodLevel: string, i
   }
 };
 
-// Eliminar un dispensador de comida
+// Eliminar 
 export const deleteFoodDispenserData = async (id: string) => {
   try {
-    const docRef = doc(db, 'foodDispenser', id);
-    await deleteDoc(docRef);
+    const docRef = doc(db, 'foodDispenser', id); // Usa doc para obtener el documento con su ID
+    await deleteDoc(docRef); // Elimina el documento
     return { success: true };
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Error desconocido';
@@ -42,10 +42,10 @@ export const deleteFoodDispenserData = async (id: string) => {
   }
 };
 
-// Obtener los dispensadores de comida
+// Obtener los datos
 export const getFoodDispensers = (callback: (dispensers: any[]) => void) => {
-  const dispenserRef = collection(db, 'foodDispenser');
-  const q = query(dispenserRef, orderBy('timestamp', 'desc'));
+  const dispenserRef = collection(db, 'foodDispenser'); 
+  const q = query(dispenserRef, orderBy('timestamp', 'desc')); // Consultar por timestamp
 
   const unsubscribe = onSnapshot(q, (querySnapshot) => {
     const dispenserData: any[] = [];
@@ -58,6 +58,5 @@ export const getFoodDispensers = (callback: (dispensers: any[]) => void) => {
     callback(dispenserData); // Llama al callback para actualizar los datos
   });
 
-  // Devuelve la función de cancelación para limpiar el listener cuando se desmonte el componente
-  return unsubscribe;
+  return unsubscribe; // Devuelve el unsubscribe para cancelar el listener cuando se desmonte el componente
 };

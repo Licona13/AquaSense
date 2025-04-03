@@ -28,24 +28,24 @@ const FoodDispenserItem = ({ data }: { data: FoodDispenserItemProps }) => {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: '#ffffffaa',
-    borderRadius: 15, // Aumentar el radio para bordes más redondeados
-    padding: 20, // Aumentar el padding para más espacio
+    borderRadius: 15, 
+    padding: 20, 
     width: '100%',
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10, // Más espacio entre filas
+    marginBottom: 10, 
   },
   cardTitle: {
-    fontSize: 20, // Aumentar el tamaño del texto
+    fontSize: 20, 
     fontWeight: 'bold',
-    marginLeft: 15, // Más espacio entre el icono y el texto
+    marginLeft: 15, 
   },
   cardText: {
-    fontSize: 18, // Aumentar el tamaño del texto
+    fontSize: 18, 
     color: '#333',
-    marginBottom: 5, // Separación entre los textos
+    marginBottom: 5, 
   },
 });
 

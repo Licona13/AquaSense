@@ -12,7 +12,7 @@ import Home from "./home/home";
 import waterQuality from "./waterQuality/water_quality";
 import FoodDispenser from "./foodDispenser/foodDispenser";
 
-const Drawer = createDrawerNavigator();
+
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -32,7 +32,7 @@ export default function App() {
         headerStyle: { backgroundColor: "#1a1a2e" },
         headerTintColor: "white",
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
-        drawerStyle: { backgroundColor: "#1a1a2e", width: 350 },
+        drawerStyle: { backgroundColor: "rgba(0,0,10,0.8)", width: 280 },
         drawerActiveTintColor: "#fff",
         drawerInactiveTintColor: "#bbb",
         drawerLabelStyle: { fontSize: 20, marginTop: 10, fontWeight: "bold" },
